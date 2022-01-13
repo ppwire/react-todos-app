@@ -1,24 +1,14 @@
 import './App.css'
-import { useState } from 'react'
-import Modal from './components/Modal.jsx'
-
+import { Routes, Route, Link } from "react-router-dom";
+import Home from './views/Home'
 function App() {
-  const [isOpen, setIsOpen] = useState(false)
-
-  const closeModal = () => {
-    setIsOpen(false)
-  }
 
   return (
-    <>
-      <div className="mt-4">
-        <h1 className="text-center font-bold">Vite React Todos</h1>
-        <div className="flex justify-center">
-          <button className='text-center' onClick={() => setIsOpen(true)}>Open Something</button>
-        </div>
-      </div>
-      <Modal isOpen={isOpen} closeModal={closeModal}></Modal>
-    </>
+    <div className="app">
+      <Routes>
+        <Route path="/" element={<Home></Home>}></Route>
+      </Routes>
+    </div>
   )
 }
 

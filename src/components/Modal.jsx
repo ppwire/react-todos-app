@@ -18,9 +18,9 @@ const Modal = (props) => {
                   leaveFrom='opacity-100'
                   leaveTo='opacity-0'
                >
-                  <Dialog.Overlay className="fixed inset-0 " />
+                  <Dialog.Overlay className="fixed inset-0 bg-slate-200 bg-opacity-80" />
                </Transition.Child>
-
+               
                <Transition.Child
                   as={Fragment}
                   enter="ease-out duration-300"
@@ -30,20 +30,15 @@ const Modal = (props) => {
                   leaveFrom='opacity-100'
                   leaveTo='opacity-0'
                >
-                  <div className="relative bg-gray-400 p-5">
-                     <Dialog.Title className="mb-2">Deactivate account</Dialog.Title>
-                     <Dialog.Description>
-                        This will permanently deactivate your account
-                     </Dialog.Description>
-
-                     <p className="mb-4">
-                        Are you sure you want to deactivate your account? All of your data will
-                        be permanently removed. This action cannot be undone.
+                  <div className="relative bg-gray-700 p-5">
+                     <Dialog.Title className="mb-2 text-white">DELETE</Dialog.Title>
+                     <p className="mb-4 text-white">
+                        Are you sure you want to delete this?
                      </p>
                      <div >
-                        <button onClick={props.closeModal}>Deactivate</button>
+                        <button onClick={props.closeModal} className="bg-white p-2">CONFIRM</button>
                         &nbsp;
-                        <button onClick={props.closeModal}>Cancel</button>
+                        <button onClick={props.closeModal} className="bg-white p-2">CANCEL</button>
                      </div>
                   </div>
                </Transition.Child>
