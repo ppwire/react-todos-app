@@ -10,7 +10,6 @@ const About = (props) => {
             </span>
             GitHub
          </a>
-         <Link to="/" className="bottom-of-the-sea">Home</Link>
       </div>
    )
 }

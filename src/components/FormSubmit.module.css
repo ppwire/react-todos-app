@@ -1,0 +1,11 @@
+label{
+   @apply font-bold text-white mb-1;
+}
+
+input{
+   @apply outline-none;
+}
+
+textarea{
+   @apply outline-none;
+}

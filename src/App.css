@@ -1,7 +1,7 @@
 .app {
-   @apply flex justify-center items-center h-screen mx-auto;
+   @apply flex flex-col mx-auto h-screen;
 }
 
-.bottom-of-the-sea{
-   @apply absolute inset-x-1/2 bottom-2 animate-bounce;
+.bottom-of-the-sea {
+   @apply animate-bounce;
 }
