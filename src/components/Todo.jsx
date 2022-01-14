@@ -1,4 +1,4 @@
-import Modal from "./Modal"
+import FormDelete from "./FormDelete"
 import { useState } from 'react'
 
 const Todo = (props) => {
@@ -8,14 +8,19 @@ const Todo = (props) => {
       setIsOpen(false)
    }
 
+   const onConfirm = () => {
+      console.log('test')
+      setIsOpen(false)
+   }
+
    return (
       <>
-         <div className="bg-slate-100 p-5 relative">
+         <div className="bg-slate-100 p-5 relative drop-shadow-md">
             <h1 className="mb-1 font-semibold">{props.title}</h1>
             <h2 className="mb-2">{props.description}</h2>
-            <button className='text-center bg-slate-200 p-3 rounded-sm font-medium' onClick={() => setIsOpen(true)}>Delete</button>
+            <button className='text-center bg-slate-200 p-3 rounded-sm font-medium hover:bg-slate-400' onClick={() => setIsOpen(true)}>Delete</button>
          </div>
-         <Modal isOpen={isOpen} closeModal={closeModal}></Modal>
+         <FormDelete isOpen={isOpen} onClose={closeModal} onConfirm={onConfirm}></FormDelete>
       </>
 
    )
