@@ -11,6 +11,7 @@ const Todo = (props) => {
    const onConfirm = () => {
       console.log('test')
       setIsOpen(false)
+      props.onDelete()
    }
 
    return (

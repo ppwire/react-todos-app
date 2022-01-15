@@ -9,11 +9,6 @@ const Home = () => {
    const todoList = [
       { title: 'Day 1', description: 'spend someshit' },
       { title: 'Day 2', description: 'spend someothershit' },
-      { title: 'Day 1', description: 'spend someshit' },
-      { title: 'Day 2', description: 'spend someothershit' },
-      { title: 'Day 1', description: 'spend someshit' },
-      { title: 'Day 2', description: 'spend someothershit' },
-
    ]
 
    let [todos, setTodos] = useState(todoList)
@@ -21,6 +16,12 @@ const Home = () => {
 
    const addTodo = (formData) => {
       setTodos([...todos, formData])
+   }
+
+   const removeTodo = (key) => {
+      let tempArray = [...todos]
+      tempArray.splice(key, 1)
+      setTodos([...tempArray])
    }
 
    return (
@@ -32,7 +33,7 @@ const Home = () => {
          </div>
          <div className="grid sm:grid-cols-2 gap-3 md:grid-cols-4 ">
             {todos.map((el, i) => {
-               return <Todo key={i} title={el.title} description={el.description}></Todo>
+               return <Todo key={i} title={el.title} description={el.description} onDelete={() => removeTodo(i)}></Todo>
             })}
          </div>
          <FormSubmit isOpen={isFormSubmitOpen} onClose={() => setIsFormSubmitOpen(false)} onUpdate={addTodo}></FormSubmit>
