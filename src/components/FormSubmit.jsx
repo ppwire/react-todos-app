@@ -1,5 +1,4 @@
 import Modal from './Modal';
-import './FormSubmit.module.css';
 const FormSubmit = (props) => {
    const submitTest = (event) => {
       event.preventDefault();
